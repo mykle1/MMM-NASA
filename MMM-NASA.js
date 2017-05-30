@@ -69,34 +69,18 @@ Module.register("MMM-NASA", {
    
             
             for(var i = 0; i < nasa.links.length; i++){ 
-			var nasa = nasa.links[i];
-         console.log(nasa);    
+			var nasalinks = nasa.links[i];
+console.log(nasalinks);    
             var top = document.createElement("div");
             top.classList.add("list-row");
-
-            // Title
-            var nasaTitle = document.createElement("div");
-            nasaTitle.classList.add("small", "bright");
-            nasaTitle.innerHTML = collection.title; // path from data
-            wrapper.appendChild(nasaTitle);
-
-            
 			// Picture
 			var nasaLogo = document.createElement("div");
 			var nasaIcon = document.createElement("img");
 			nasaIcon.classList.add("list-left", "photo"); 
-			nasaIcon.src = collection.links.href;  // path from data
+			nasaIcon.src = nasalinks.href;  // path from data
 				
 			nasaLogo.appendChild(nasaIcon);
-			wrapper.appendChild(nasaLogo);	
-				
-			
-		
-			// Description of Picture
-            var nasaDescription = document.createElement("div");
-            nasaDescription.classList.add("xsmall", "bright", "list-title");
-            nasaDescription.innerHTML = collection.description_508;
-            wrapper.appendChild(nasaDescription);
+			wrapper.appendChild(nasaLogo);
 				}
         }
         return wrapper;
