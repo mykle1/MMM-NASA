@@ -30,9 +30,9 @@ Module.register("MMM-NASA", {
         requiresVersion: "2.1.0",
 
         // Set locale.
-        this.url = this.getNASAUrl();
-        this.collection = {};  // collection is from the data path
-	//	this.nasa = {};        // nasa because it was "event" from my Events module
+        this.url = "https://images-api.nasa.gov/search?q=" + this.config.search + "&media_type=image";
+        //this.collection = {};  // collection is from the data path
+	    this.nasa = {};        // beacause this.nasa=data.items ;)
         this.activeItem = 0;
         this.rotateInterval = null;
         this.scheduleUpdate();
@@ -58,14 +58,19 @@ Module.register("MMM-NASA", {
         }
 
         // should I use collection or nasa here????  collection from data path
-        var keys = Object.keys(this.collection); 
+        var keys = Object.keys(this.nasa); 
         if (keys.length > 0) {
             if (this.activeItem >= keys.length) {
                 this.activeItem = 0;
             }
 
            // again, I don't know if I should use nasa or collection
-            var collection = this.collection[keys[this.activeItem]];
+            var nasa = this.nasa[keys[this.activeItem]];
+   
+            
+            for(var i = 0; i < nasa.links.length; i++){ 
+			var nasa = nasa.links[i];
+         console.log(nasa);    
             var top = document.createElement("div");
             top.classList.add("list-row");
 
@@ -92,16 +97,15 @@ Module.register("MMM-NASA", {
             nasaDescription.classList.add("xsmall", "bright", "list-title");
             nasaDescription.innerHTML = collection.description_508;
             wrapper.appendChild(nasaDescription);
-
-
+				}
         }
         return wrapper;
     },
 
     processNASA: function(data) {
-        this.collection = data.collection;
-		this.nasa = data.nasa;
-        this.links = data.links;
+        //no such thing
+		//this.nasa = data.nasa;
+       this.nasa=data.items
         this.loaded = true;
     },
 
@@ -119,25 +123,6 @@ Module.register("MMM-NASA", {
         }, this.config.updateInterval);
         this.getNASA(this.config.initialLoadDelay);
         var self = this;
-    },
-
-    getNASAUrl: function() {
-
-        var url = null;
-        var search = this.config.search;
-     //   var today = new Date();				// Removed these. Don't think I need them
-     //   var eventsYear = today.getMonth() + 1;
-     //   var city = this.config.city.toLowerCase();
-     //   var apikey = this.config.apikey;
-	//	var eventType = this.config.eventType;
-	//	var when = this.config.when;
-
-       // Only this will change in the url as a config option
-        if (search != "") {
-            url = "https://images-api.nasa.gov/search?q=" + search + "&media_type=image";
-        }
-		
-        return url;
     },
 
     getNASA: function() {
