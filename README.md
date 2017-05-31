@@ -25,15 +25,15 @@ Brought to you by NASA's Hubble, Spitzer and Galaxy Evolution Explorer Telescope
         module: 'MMM-NASA',
         position: 'top_left',
         config: {
-            search: "nebula",              // See search: "parameters" list. 
-		    rotateInterval: 5 * 60 * 1000, // New Image Appears
-		    useHeader: false,
+            search: "nebula",                // See search: "parameters" list. 
+	    rotateInterval: 5 * 60 * 1000,   // New Image Appears
+	    useHeader: false,
             header: "",
-		    maxWidth: "300px",             // For description text. Image size using css file.
-		    animationSpeed: 3000,          // Image fades in and out
+	    maxWidth: "300px",               // For description text. Image size using css file.
+	    animationSpeed: 3000,            // Image fades in and out
             initialLoadDelay: 4250,
             retryDelay: 2500,
-		    updateInterval: 60 * 60 * 1000, // NASA Limits 50 calls a day. Every 30 minutes = 48. 
+	    updateInterval: 60 * 60 * 1000,  // NASA Limits 50 calls a day. Every 30 minutes = 48. 
         }
     },
 	
