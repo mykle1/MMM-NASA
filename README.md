@@ -5,9 +5,9 @@ Brought to you by NASA's Hubble, Spitzer and Galaxy Evolution Explorer Telescope
 
 ## To Infinity And Beyond!
 
-![](pix/1.JPG), ![](pix/2.JPG), ![](pix/3.JPG)
+![](pix/1.JPG), ![](pix/6.JPG), ![](pix/3.JPG)
 
-![](pix/4.JPG),![](pix/5.JPG), ![](pix/6.JPG), ![](pix/7.JPG)
+![](pix/4.JPG),![](pix/5.JPG), ![](pix/2.JPG), ![](pix/7.JPG)
 
 ## Installation
 
