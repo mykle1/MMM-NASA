@@ -22,7 +22,7 @@ module.exports = NodeHelper.create({
         }, (error, response, body) => {
             if (!error && response.statusCode == 200) {
                 var result = JSON.parse(body).collection;
-				console.log(response.statusCode);
+				// console.log(response.statusCode);
                 this.sendSocketNotification('NASA_RESULT', result);
             }
         });
