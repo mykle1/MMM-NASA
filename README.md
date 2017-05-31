@@ -9,7 +9,7 @@ Brought to you by NASA's Hubble, Spitzer and Galaxy Evolution Explorer Telescope
 
 ![](pix/2.JPG), ![](pix/4.JPG),
 
-![](pix/5.JPG), ![](pix/3.JPG),
+![](pix/3.JPG), ![](pix/5.JPG),
 
 ## Installation
 
