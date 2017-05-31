@@ -55,6 +55,7 @@ Brought to you by NASA's Hubble, Spitzer and Galaxy Evolution Explorer Telescope
 * Comet
 * Any planet name (e.g. Saturn, Jupiter, etc..)
 * Constellation
+* Any Constellation name (e.g. Scorpius, Pegasus, Pisces) https://starchild.gsfc.nasa.gov/docs/StarChild/questions/88constellations.html
 * Culmination
 * Binary Star
 * Earthshine
