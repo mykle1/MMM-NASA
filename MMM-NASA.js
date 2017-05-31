@@ -9,7 +9,7 @@ Module.register("MMM-NASA", {
     // Module config defaults.
     defaults: {
         search: "nebula",             // See NASA Search List in ReadMe  
-		rotateInterval: 5 * 60 * 1000, // New Image Appears
+		rotateInterval: 5 * 1000, // New Image Appears
 		useHeader: false,
         header: "",
 		maxWidth: "195px",             // adjust to your liking 
@@ -70,9 +70,17 @@ Module.register("MMM-NASA", {
             
             for(var i = 0; i < nasa.links.length; i++){ 
 			var nasalinks = nasa.links[i];
-console.log(nasalinks);    
+			
+console.log(nasalinks);
+console.log(nasa.data[0].description);    
             var top = document.createElement("div");
             top.classList.add("list-row");
+            
+            var title = document.createElement("div");
+           
+			title.classList.add("xsmall", "bright");
+			title.innerHTML = nasa.data[0].title;
+			wrapper.appendChild(title);
 			// Picture
 			var nasaLogo = document.createElement("div");
 			var nasaIcon = document.createElement("img");
@@ -81,6 +89,11 @@ console.log(nasalinks);
 				
 			nasaLogo.appendChild(nasaIcon);
 			wrapper.appendChild(nasaLogo);
+			
+			var nasaDes = document.createElement("div");
+			nasaDes.classList.add("xsmall", "bright");
+			nasaDes.innerHTML = this.sTrim(nasa.data[0].description, 125, ' ', ' ...');
+			wrapper.appendChild(nasaDes);
 				}
         }
         return wrapper;
@@ -91,6 +104,15 @@ console.log(nasalinks);
 		//this.nasa = data.nasa;
        this.nasa=data.items
         this.loaded = true;
+    },
+    
+    sTrim: function (str, length, delim, appendix) {
+    if (str.length <= length) return str;
+    var trimmedStr = str.substr(0, length+delim.length);
+    var lastDelimIndex = trimmedStr.lastIndexOf(delim);
+    if (lastDelimIndex >= 0) trimmedStr = trimmedStr.substr(0, lastDelimIndex);
+    if (trimmedStr) trimmedStr += appendix;
+    return trimmedStr;
     },
 
     scheduleCarousel: function() {
