@@ -1,5 +1,5 @@
 ## MMM-NASA
-Stunning imagery and information about your universe.
+Stunning imagery and information about your universe. Looks amazing on your mirror!
 
 Brought to you by NASA's Hubble, Spitzer and Galaxy Evolution Explorer Telescopes. (And others)
 
