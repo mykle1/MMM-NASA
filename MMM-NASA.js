@@ -81,7 +81,7 @@ Module.register("MMM-NASA", {
 
                 var nasaLogo = document.createElement("div");
                 var nasaIcon = document.createElement("img");
-                nasaIcon.classList.add("list-left", "photo");
+                nasaIcon.classList.add("photo");
                 nasaIcon.src = nasalinks.href;
                 nasaLogo.appendChild(nasaIcon);
                 wrapper.appendChild(nasaLogo);

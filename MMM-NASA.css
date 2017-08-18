@@ -6,19 +6,24 @@
 
 
 .MMM-NASA .small.bright {
-  color: #FFFFFF;             /* Color the title text. Default is white. */
-  text-align: left;           /* Align the title text. (left, center, right) */
+  color: #FFFFFF;               /* Color the title text. Default is white. */
+  text-align: center;           /* Align the title text. (left, center, right) */
   /*  display: none; */         /* Uncomment if you don't want title text */
+}
+
+.MMM-NASA .photo {
+  width: 100%;                /* adjust size of picture */
+  height: 200px;
+  margin-left: 0px;          /* Precisely align picture with these */
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  float: right;
 }
 
 .MMM-NASA .xsmall.bright {
   color: #FFFFFF;             /* Color the information. Default is white. */
-  text-align: left;           /* Align the information. (left, center, right) */
+  text-align: center;         /* Align the information. (left, center, right) */
 /*  display: none; */         /* Uncomment if you don't want descriptive information */
 }
 
-.MMM-NASA .list-left {
-    width: 300px;             /* Size of image */
-    padding: 0px;             /* Nudge image */
-    float: left;              /* Align the picture. (left, center, right) */
-}
