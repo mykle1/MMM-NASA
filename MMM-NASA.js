@@ -95,6 +95,17 @@ Module.register("MMM-NASA", {
         }
         return wrapper;
     },
+	
+	notificationReceived: function(notification, payload) {
+        if (notification === 'HIDE_NASA') {
+            this.hide(1000);
+            this.updateDom(300);
+        }  else if (notification === 'SHOW_NASA') {
+            this.show(1000);
+            this.updateDom(300);
+        }
+            
+    },
 
     processNASA: function(data) {
         this.nasa = data.items
