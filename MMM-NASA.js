@@ -8,11 +8,13 @@ Module.register("MMM-NASA", {
 
     // Module config defaults.
     defaults: {
-        search: "nebula", // See Search List in ReadMe  
+        infoLength: 187,
+        scroll: "yes", // yes= scrolling info, no = static info
+        search: "nebula", // See Search List in ReadMe
         rotateInterval: 5 * 60 * 1000, // New Image Appears
         useHeader: false,
         header: "",
-        maxWidth: "195px", // adjust to your liking 
+        maxWidth: "195px", // adjust to your liking
         animationSpeed: 3000, // Image fades in and out
         initialLoadDelay: 4250,
         retryDelay: 2500,
@@ -86,25 +88,30 @@ Module.register("MMM-NASA", {
                 nasaLogo.appendChild(nasaIcon);
                 wrapper.appendChild(nasaLogo);
 
-
-                var nasaDes = document.createElement("div");
-                nasaDes.classList.add("xsmall", "bright");
-                nasaDes.innerHTML = this.sTrim(nasa.data[0].description, 187, ' ', ' ...');
-                wrapper.appendChild(nasaDes);
+                // scrolling or static information
+              if (this.config.scroll == "no"){
+                  var nasaDes = document.createElement("div");
+                  nasaDes.classList.add("xsmall", "bright");
+                  nasaDes.innerHTML = this.sTrim(nasa.data[0].description, + this.config.infoLength, ' ', ' ...');
+                  wrapper.appendChild(nasaDes);
+       } else if (this.config.scroll == "yes"){
+                  var nasaDes = document.createElement("div");
+                  nasaDes.classList.add("small", "bright");
+                  nasaDes.innerHTML = '<marquee behavior="scroll" direction ="left" scrollamount="3">' + this.sTrim(nasa.data[0].description, + this.config.infoLength, ' ', ' ...') + '</marquee>';
+                  wrapper.appendChild(nasaDes);
+                }
             }
         }
         return wrapper;
     },
-	
+
 	notificationReceived: function(notification, payload) {
         if (notification === 'HIDE_NASA') {
-            this.hide(1000);
-            this.updateDom(300);
+            this.hide();
         }  else if (notification === 'SHOW_NASA') {
             this.show(1000);
-            this.updateDom(300);
         }
-            
+
     },
 
     processNASA: function(data) {
