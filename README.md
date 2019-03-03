@@ -28,7 +28,7 @@ Brought to you by NASA's Hubble, Spitzer and Galaxy Evolution Explorer Telescope
 		search: "Galaxy",                // See Config entries for search: (Bottom of ReadMe)
 		infoLength: 400,                 // length of info (mostly for static info)
             scroll: "yes",                   // yes= scrolling info, no = static info
-		rotateInterval: 5 * 60 * 1000,   // New Image Appears
+		rotateInterval: 5 * 60000,       // 5 minutes default. Must use ms (milliseconds)
 		useHeader: false,
 		header: "",
 		maxWidth: "300px",               // For description text. Image size using css file.
